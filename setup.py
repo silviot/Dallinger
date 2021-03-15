@@ -4,9 +4,9 @@ from setup_utils import update_pins
 from setuptools import setup
 
 setup_args = dict(
-    name='dallinger',
+    name='dallinger-testrelease',
     packages=['dallinger', 'dallinger_scripts'],
-    version="7.0.0",
+    version="7.0.0-alpha2",
     description='Laboratory automation for the behavioral and social sciences',
     url='http://github.com/Dallinger/Dallinger',
     maintainer='Jordan Suchow',
