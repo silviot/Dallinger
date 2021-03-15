@@ -1,6 +1,7 @@
 # Change Log
-## [master](https://github.com/dallinger/dallinger/tree/master) (xxxx-xx-xx)
+## [v7.0.0-alpha3](https://github.com/dallinger/dallinger/tree/master) (xxxx-xx-xx)
 - Initial docker support: `dallinger docker debug` command to run dallinger in a local container
+- Separate github step for releasing to Pypi
 
 ## [v7.0.0](https://github.com/dallinger/dallinger/tree/v7.0.0) (2021-02-11)
 - Infrastructure: Drop support for python 2.x :-/
