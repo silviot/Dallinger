@@ -53,3 +53,28 @@ jobs:
         uses: pypa/gh-action-pypi-publish@v1.4.2
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
+
+  docker-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get version
+        id: vars
+        run: echo ::set-output name=version::${GITHUB_REF#refs/*/v}
+      - name: Build silviot/dallinger docker image
+        uses: docker/build-push-action@v2
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          push: true
+          load: false
+          target: dallinger
+          tags: silviot/dallinger:${{ steps.vars.outputs.version }}
+      - name: Build silviot/dallinger-bot docker image
+        uses: docker/build-push-action@v2
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          push: true
+          load: false
+          target: dallinger-bot
+          tags: silviot/dallinger-bot:${{ steps.vars.outputs.version }}
